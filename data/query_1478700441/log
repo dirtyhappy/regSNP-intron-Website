@@ -1,0 +1,23 @@
+2016-11-09 04:07:23,705 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2016-11-09 04:07:23,712 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2016-11-09 04:07:23,746 - INFO - regsnp_intron.feature_calculator - Annotating SNVs with ANNOVAR.
+-----------------------------------------------------------------
+NOTICE: Processing operation=g protocol=ensGene
+
+NOTICE: Running with system command <annotate_variation.pl -geneanno -buildver hg19 -dbtype ensGene -outfile data/query_1478700441/output/tmp/snp.ensGene -exonsort data/query_1478700441/output/tmp/snp.avinput /data/linhai/bin/src/annovar/humandb>
+NOTICE: Output files were written to data/query_1478700441/output/tmp/snp.ensGene.variant_function, data/query_1478700441/output/tmp/snp.ensGene.exonic_variant_function
+NOTICE: Reading gene annotation from /data/linhai/bin/src/annovar/humandb/hg19_ensGene.txt ... Done with 196501 transcripts (including 101155 without coding sequence annotation) for 57905 unique genes
+NOTICE: Processing next batch with 22 unique variants in 22 input lines
+-----------------------------------------------------------------
+NOTICE: Multianno output file is written to data/query_1478700441/output/tmp/snp.hg19_multianno.txt
+2016-11-09 04:07:32,318 - INFO - regsnp_intron.feature_calculator - Calculating distance to closest protein coding exons.
+2016-11-09 04:07:32,983 - INFO - regsnp_intron.feature_calculator - Fetching flanking sequence.
+2016-11-09 04:07:33,029 - INFO - regsnp_intron.feature_calculator - Calculating RBP binding change.
+2016-11-09 04:08:51,355 - INFO - regsnp_intron.feature_calculator - Extracting protein structural features.
+2016-11-09 04:08:56,728 - INFO - regsnp_intron.feature_calculator - Calculating junction strength change.
+2016-11-09 04:08:56,742 - INFO - regsnp_intron.feature_calculator - Calculating conservation score.
+2016-11-09 04:08:57,154 - INFO - regsnp_intron.feature_calculator - Merging all the features.
+2016-11-09 04:08:58,493 - INFO - regsnp_intron.predictor.predictor - Loading all the features.
+2016-11-09 04:08:58,521 - INFO - regsnp_intron.predictor.predictor - Predicting on splicing site SNVs.
+2016-11-09 04:08:58,535 - INFO - regsnp_intron.predictor.predictor - Predicting off splicing site SNVs
+2016-11-09 04:08:58,550 - INFO - regsnp_intron.predictor.predictor - Generate final output.
