@@ -17,10 +17,114 @@
   <link rel="icon" href="resources/images/iu_tab.jpg">
 
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+
+<style>
+    .ui-tooltip {
+    color: white;
+    background-color: black;
+
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .red{
+   background-color : #FF492D !important;
+  }
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="."><img style="width: 52px;" src="resources/images/iu_tab.jpg">regSNP-intron</a>
+      </div>
+  
+      <!-- Collect the nav links and other content for toggling -->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href=".">Home </a></li>
+		  <li><a href="document.html">Document</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://watson.compbio.iupui.edu/regSNP-splicing/" target="_blank">regSNP-splicing</a></li>
+              <li><a href="http://watson.compbio.iupui.edu/ExonImpact/" target="_blank">ExonImpact</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="http://annovar.openbioinformatics.org/en/latest/" target="_blank">ANNOVAR</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/linhai86/regsnp_intron" target="_blank">GitHub</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <h4>Resources</h4>
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
+          <li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
+          <li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
+        </ul><br>
+      </div>
+  
+      <div class="col-sm-9">
+		<h1>regSNP-intron</h1>
+		<!-- <p id="message"></p> -->
+		<div id="message" class="alert"></div>
+
+        </p>
+        <table id="resultTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+          <thead>
+              <tr>
+                  <th title="Chromosome">Chrom</th>
+                  <th title="Location">Pos</th>
+                  <th title="Reference Allele">Ref</th>
+                  <th title="Alternative Allele">Alt</th>
+                  <th title="Predicted disease phenotype (B = Benign,PD = Possibly Damaging, D = Damaging)">Disease</th>
+		  <th title="Disease-causing Probability">Prob</th>
+                  <th title="True Positive Rate">TPR</th>
+                  <th title="False Positive Rate">FPR</th>
+                  <th title="Whether the variant occurs in a splicing site">Splicing_site</th>
+                  <th title="Gene Name">Name</th>
+                  <th title="Strand + or -">Strand</th>
+              </tr>
+          </thead>
+        </table>
+        <div id="svgHolder"></div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="container-fluid">
+    <small>
+    <p class="text-center">&copy; 2016 CCBB</p>
+    <address><p class="text-center"><a href="mailto:yunliu@iupui.edu">Contact Us</a></p></address>
+    </small>
+  </footer>
+</div>
+
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
   <script language="javascript" src="//www.biodalliance.org/release-0.13/dalliance-compiled.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   <script>
   var query_id = "<?php echo $_GET["query_id"] ?>";
   var data_file = "data/" + query_id + "/output/snp.prediction.json";
@@ -31,30 +135,39 @@
         "scrollX": true,
 		"ajax": data_file,
         "columns": [
-            { "data": "#chrom" },
-            { "data": "pos" },
-            { "data": "ref" },
-            { "data": "alt" },
-            { "data": "disease" },
+	    { "data": "#chrom"},
+	     
+            { "data": "pos"}, 
+
+            { "data": "ref"}, 
+            { "data": "alt"}, 
+
+            { "data": "disease"}, 
+
             { "data": "prob",
               "render": function ( data, type, row ) {
-                 return parseFloat(data).toFixed(2);;
-              }
-            },
+                 return parseFloat(data).toFixed(2);
+              }},
+            
             { "data": "tpr",
               "render": function ( data, type, row ) {
                  return parseFloat(data).toFixed(2);;
-              }
-            },
+              }},
+            
             { "data": "fpr",
               "render": function ( data, type, row ) {
                  return parseFloat(data).toFixed(2);;
-              }
-            },
-            { "data": "splicing_site" },
-            { "data": "name" },
-            { "data": "strand" }
-        ]
+              }},
+            
+            { "data": "splicing_site"}, 
+            { "data": "name"}, 
+            { "data": "strand"}
+    ],
+    	"createdRow": function(row, data, dataIndex, cells){
+		if (data.disease == 1 || data.disease == "D"){
+			$(row).addClass("red");
+		}
+	}
     } );
     
     var table = $('#resultTable').DataTable();
@@ -118,93 +231,14 @@
         $("#message").addClass("alert-danger").html("<strong>The job may still be running or an error has occurred. Please check the <a href='submission.php?query_id=" + query_id + "'>submission page</a>.</strong>");
       }
     });
+    $("th").tooltip({
+    	show: {delay:500},
+	position: {my:"left top", collision: "none"}
+    });
   });
+
+			  
   </script>
-</head>
 
-<body>
-<div class="container-fluid">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="."><img style="width: 52px;" src="resources/images/iu_tab.jpg">regSNP-intron</a>
-      </div>
-  
-      <!-- Collect the nav links and other content for toggling -->
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href=".">Home </a></li>
-		  <li><a href="document.html">Document</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="http://watson.compbio.iupui.edu/regSNP-splicing/" target="_blank">regSNP-splicing</a></li>
-              <li><a href="http://watson.compbio.iupui.edu/ExonImpact/" target="_blank">ExonImpact</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="http://annovar.openbioinformatics.org/en/latest/" target="_blank">ANNOVAR</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/linhai86/regsnp_intron" target="_blank">GitHub</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  
-  <div class="container-fluid">
-    <div class="row content">
-      <div class="col-sm-3 sidenav">
-        <h4>Resources</h4>
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
-          <li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
-          <li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
-        </ul><br>
-      </div>
-  
-      <div class="col-sm-9">
-		<h1>regSNP-intron</h1>
-		<!-- <p id="message"></p> -->
-		<div id="message" class="alert"></div>
-
-        </p>
-        <table id="resultTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-          <thead>
-              <tr>
-                  <th>Chrom</th>
-                  <th>Pos</th>
-                  <th>Ref</th>
-                  <th>Alt</th>
-                  <th>Disease</th>
-		  <th>Prob</th>
-                  <th>TPR</th>
-                  <th>FPR</th>
-                  <th>Splicing_site</th>
-                  <th>Name</th>
-                  <th>Strand</th>
-              </tr>
-          </thead>
-        </table>
-        <div id="svgHolder"></div>
-      </div>
-    </div>
-  </div>
-  
-  <footer class="container-fluid">
-    <small>
-    <p class="text-center">&copy; 2016 CCBB</p>
-    <address><p class="text-center"><a href="mailto:yunliu@iupui.edu">Contact Us</a></p></address>
-    </small>
-  </footer>
-</div>
 </body>
 </html>

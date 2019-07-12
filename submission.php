@@ -3,14 +3,19 @@
 <?php
 $query_id = $_GET["query_id"];
 $page = "submission.php?query_id=".$query_id;
-$sec = "10";
+$sec = 1;
+$json_file = "data/" . $query_id . "/output/snp.prediction.json";
 ?>
 
 <html lang="en">
 <head>
   <title>regSNP-intron</title>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
+  <?php
+  if (!file_exists($json_file)) {
+	header('Refresh:' . $sec);
+  }
+  ?>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous">
   </script>
   <!-- Latest compiled and minified CSS -->
@@ -82,10 +87,9 @@ echo "<p>Your query has been submitted. The job (id=" . trim($query_id, "query_"
 ini_set("auto_detect_line_endings", true);
 $log = file_get_contents("data/" . $query_id . "/log");
 echo nl2br( $log );
-
-if (strpos($log, 'final') !== false) {
-  echo "<br><strong><p>You job is finished: ";
-  echo "<a href='"."result.php?query_id=" . $query_id ."'>Result Page</a></p></strong>";
+if (file_exists($json_file)) {
+         echo "<br><strong><p>You job is finished: ";
+         echo "<a href='"."result.php?query_id=" . $query_id ."'>Result Page</a></p></strong>";
 }
 ?>  
       </div>
