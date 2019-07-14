@@ -3,6 +3,7 @@
 <?php
 $query_id = $_GET["query_id"];
 $page = "submission.php?query_id=".$query_id;
+$results = "result.php?query_id=" . $query_id;
 $sec = 1;
 $json_file = "data/" . $query_id . "/output/snp.prediction.json";
 ?>
@@ -13,7 +14,10 @@ $json_file = "data/" . $query_id . "/output/snp.prediction.json";
   <meta charset="utf-8">
   <?php
   if (!file_exists($json_file)) {
-	header('Refresh:' . $sec);
+	  header('Refresh:' . $sec);
+  }
+  else {
+	  header('Refresh:0, url=' . $results);
   }
   ?>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous">

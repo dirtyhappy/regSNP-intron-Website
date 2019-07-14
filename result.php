@@ -182,7 +182,7 @@
 		}
 		var record = table.row(this).data();
         console.log(record['#chrom'].substring(3));
-        browser.setLocation(record['#chrom'].substring(3), record['pos'] - 50, record['pos'] + 50);
+        browser.setLocation(record['#chrom'].substring(3), parseInt(record['pos']) - 50, parseInt(record['pos']) + 50);
     } );
 
     var browser =  new Browser({

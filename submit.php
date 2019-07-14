@@ -6,7 +6,7 @@
 <?php
   $cur_time=time();
   $query_id = "query_".$cur_time;
-  $target_dir="data/".$query_id;
+  $target_dir="/var/www/html/data/".$query_id;
   if (!empty($_FILES["input_file"]["name"])) {
     mkdir($target_dir);
     $target_file = $target_dir . "/snp_input.txt";
