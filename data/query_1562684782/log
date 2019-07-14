@@ -1,0 +1,2 @@
+2019-07-09 15:06:22,770 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-09 15:06:22,771 - ERROR - regsnp_intron.utils.snp - Coordinate exceed the range of chromosome: chr1 32847123834 A G.

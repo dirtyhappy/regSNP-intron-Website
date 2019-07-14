@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regsnp-intron==0.1.6', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1445, in run_script
+    exec(script_code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regsnp_intron-0.1.6-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 100, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/regsnp_intron-0.1.6-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 73, in main
+    
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 62, in calculate_feature
+IOError: [Errno 2] No such file or directory: '/var/www/html/data/query_1563137647/output/snp_fixed_input.txt'

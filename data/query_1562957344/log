@@ -1,0 +1,2 @@
+2019-07-12 18:49:05,540 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-12 18:49:05,541 - ERROR - regsnp_intron.utils.snp - Invalid file format: . File should contain tab-delimited four columns: chrom, pos, ref, alt

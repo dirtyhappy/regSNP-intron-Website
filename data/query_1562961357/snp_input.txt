@@ -1,0 +1,7 @@
+chr1	865883	T	C
+chr1	865883	T	G
+chr1	865884	C	A
+chr1	865884	C	G
+chr1	865884	C	T
+chr1	865885	T	A
+chr1	865885	T	G

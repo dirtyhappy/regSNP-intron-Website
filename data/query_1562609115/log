@@ -1,0 +1,21 @@
+2019-07-08 18:05:25,646 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-08 18:05:25,899 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-08 18:05:25,942 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-08 18:05:25,942 - INFO - regsnp_intron.feature_calculator - Annotating SNVs with ANNOVAR.
+Error: the required database file /var/www/Muri/annovar/humandb/hg19_ensGene.txt does not exist.
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regsnp-intron==0.1.6', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1445, in run_script
+    exec(script_code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regsnp_intron-0.1.6-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 65, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/regsnp_intron-0.1.6-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 51, in main
+    
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 61, in calculate_feature
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/utils/annovar.py", line 28, in annotate
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '[u'/var/www/Muri/annovar/table_annovar.pl', '/var/www/html/data/query_1562609115/output/tmp/snp.avinput', u'/var/www/Muri/annovar/humandb', '-buildver', 'hg19', '-out', '/var/www/html/data/query_1562609115/output/tmp/snp', '-remove', '-protocol', 'ensGene', '-operation', 'g', '-nastring', '.']' returned non-zero exit status 2

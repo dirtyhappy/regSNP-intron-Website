@@ -1,0 +1,27 @@
+2019-07-08 19:45:10,554 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-08 19:45:10,555 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-08 19:45:10,565 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regsnp-intron==0.1.6', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1445, in run_script
+    exec(script_code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regsnp_intron-0.1.6-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 98, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/regsnp_intron-0.1.6-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 71, in main
+    
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 69, in calculate_feature
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 204, in _queryDB
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/collection.py", line 1269, in find_one
+    for result in cursor.limit(-1):
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1225, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1140, in _refresh
+    self.__send_message(q)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1010, in __send_message
+    helpers._check_command_response(first)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/helpers.py", line 155, in _check_command_response
+    raise OperationFailure(msg % errmsg, code, response)
+pymongo.errors.OperationFailure: user is not allowed to do action [find] on [muriDB.muriCol]

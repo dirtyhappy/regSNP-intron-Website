@@ -1,0 +1,5 @@
+2019-07-08 21:48:27,879 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-08 21:48:27,880 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-08 21:48:27,890 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+/usr/local/lib/python2.7/dist-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d

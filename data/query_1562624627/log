@@ -1,0 +1,15 @@
+2019-07-08 22:23:48,301 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-08 22:23:48,302 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-08 22:23:48,307 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-08 22:23:48,307 - INFO - regsnp_intron.feature_calculator - Annotating SNVs with ANNOVAR.
+-----------------------------------------------------------------
+NOTICE: Processing operation=g protocol=ensGene
+
+NOTICE: Running with system command <annotate_variation.pl -geneanno -buildver hg19 -dbtype ensGene -outfile /var/www/html/data/query_1562624627/output/tmp/snp.ensGene -exonsort /var/www/html/data/query_1562624627/output/tmp/snp.avinput /var/www/Muri/annovar/humandb>
+NOTICE: Output files were written to /var/www/html/data/query_1562624627/output/tmp/snp.ensGene.variant_function, /var/www/html/data/query_1562624627/output/tmp/snp.ensGene.exonic_variant_function
+NOTICE: Reading gene annotation from /var/www/Muri/annovar/humandb/hg19_ensGene.txt ... Done with 37 transcripts (including 24 without coding sequence annotation) for 37 unique genes
+NOTICE: Processing next batch with 22 unique variants in 22 input lines
+-----------------------------------------------------------------
+NOTICE: Multianno output file is written to /var/www/html/data/query_1562624627/output/tmp/snp.hg19_multianno.txt
+2019-07-08 22:23:48,444 - INFO - regsnp_intron.feature_calculator - Calculating distance to closest protein coding exons.
+2019-07-08 22:23:48,812 - ERROR - regsnp_intron.feature_calculator - No input SNVs are in valid intronic regions.

@@ -27,7 +27,7 @@
   <script>
   $(document).ready(function(){
       $('#example').click(function(e){
-          $('#TextArea').load("data/example/input_example.txt", function(responseTxt, statusTxt, xhr){
+          $('#TextArea').load("input_example.txt", function(responseTxt, statusTxt, xhr){
            if(statusTxt == "error"){
              alert("Error: Could Not Load Example");
            }

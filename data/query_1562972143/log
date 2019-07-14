@@ -1,0 +1,3 @@
+usage: regsnp_intron [-h] [-s SFNAME] [-f] [--iformat {txt,vcf}]
+                     ifname out_dir
+regsnp_intron: error: argument --iformat: invalid choice: 'csv' (choose from 'txt', 'vcf')
