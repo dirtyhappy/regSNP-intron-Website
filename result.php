@@ -28,8 +28,11 @@
     display: inline-block;
   }
 
-  .red{
+  .d{
    background-color : #FF492D !important;
+  }
+  .pd{
+   background-color : #FF8C7A !important;
   }
 </style>
 </head>
@@ -164,10 +167,13 @@
             { "data": "strand"}
     ],
     	"createdRow": function(row, data, dataIndex, cells){
-		if (data.disease == 1 || data.disease == "D"){
-			$(row).addClass("red");
+		if (data.disease == "D"){
+			$(row).addClass("d");
 		}
-	}
+		if (data.disease == "PD"){
+			$(row).addClass("pd");
+		}
+	},
     } );
     
     var table = $('#resultTable').DataTable();
