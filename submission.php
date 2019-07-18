@@ -38,6 +38,17 @@ $invalid_file = "data/" . $query_id . "/output/invalid.txt";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="resources/css/mystyle.css"/>
   <link rel="icon" href="resources/images/iu_tab.jpg">
+
+
+<style>
+  .invalid {
+	color: white;
+	background-color : red;
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+  }
+</style>
 </head>
 
 <body>

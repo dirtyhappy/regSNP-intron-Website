@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="resources/css/mystyle.css"/>
   <link rel="icon" href="resources/images/iu_tab.jpg">
-
+	
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/basic/jquery.qtip.min.css">
   
@@ -34,7 +34,14 @@
   .pd{
    background-color : #FF8C7A !important;
   }
-  
+  #resultTable tbody tr.pd.info  td {
+	color: white;
+	background-color : #FF8C7A;
+   }     
+  #resultTable tbody tr.d.info  td {
+	color: white;
+	background-color : #FF492D;
+   }     
     
 </style>
 </head>
