@@ -80,7 +80,7 @@ $invalid_file = "data/" . $query_id . "/output/invalid.txt";
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/linhai86/regsnp_intron" target="_blank">GitHub</a></li>
+          <li><a href= "https://github.com/mmammel12/regSNP" target="_blank">GitHub</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
