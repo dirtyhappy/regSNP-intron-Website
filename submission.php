@@ -6,6 +6,7 @@ $page = "submission.php?query_id=".$query_id;
 $results = "result.php?query_id=" . $query_id;
 $sec = 1;
 $json_file = "data/" . $query_id . "/output/snp.prediction.json";
+$invalid_file = "data/" . $query_id . "/output/invalid.txt";
 ?>
 
 <html lang="en">
@@ -14,10 +15,15 @@ $json_file = "data/" . $query_id . "/output/snp.prediction.json";
   <meta charset="utf-8">
   <?php
   if (!file_exists($json_file)) {
-	  header('Refresh:' . $sec);
+         header('Refresh:' . $sec);
   }
-  else {
-	  header('Refresh:0, url=' . $results);
+  else 	{
+        if (!file_exists($invalid_file)) {
+                header('Refresh:0, url=' . $results);
+	}
+	else {
+		echo "invalid";
+	}
   }
   ?>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous">
@@ -64,6 +70,14 @@ $json_file = "data/" . $query_id . "/output/snp.prediction.json";
               <li><a href="http://annovar.openbioinformatics.org/en/latest/" target="_blank">ANNOVAR</a></li>
             </ul>
           </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+          	<li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
+          	<li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
+          	<li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
+            </ul>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="https://github.com/linhai86/regsnp_intron" target="_blank">GitHub</a></li>
@@ -74,15 +88,6 @@ $json_file = "data/" . $query_id . "/output/snp.prediction.json";
   
   <div class="container-fluid">
     <div class="row content">
-      <div class="col-sm-3 sidenav">
-        <h4>Resources</h4>
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
-          <li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
-          <li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
-        </ul><br>
-      </div>
-  
       <div class="col-sm-9">
         <h1>Submission</h1>
 <?php

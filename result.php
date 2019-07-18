@@ -17,15 +17,15 @@
   <link rel="icon" href="resources/images/iu_tab.jpg">
 
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/basic/jquery.qtip.min.css">
+  
 
 <style>
-    .ui-tooltip {
+    .qtip {
     color: white;
     background-color: black;
-
-    padding: 10px;
-    text-align: center;
-    display: inline-block;
+    font-size: 12px;	
+    border-style : none;
   }
 
   .d{
@@ -34,6 +34,8 @@
   .pd{
    background-color : #FF8C7A !important;
   }
+  
+    
 </style>
 </head>
 
@@ -67,6 +69,14 @@
               <li><a href="http://annovar.openbioinformatics.org/en/latest/" target="_blank">ANNOVAR</a></li>
             </ul>
           </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+          	<li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
+          	<li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
+          	<li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
+            </ul>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="https://github.com/linhai86/regsnp_intron" target="_blank">GitHub</a></li>
@@ -77,16 +87,7 @@
   
   <div class="container-fluid">
     <div class="row content">
-      <div class="col-sm-3 sidenav">
-        <h4>Resources</h4>
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
-          <li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
-          <li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
-        </ul><br>
-      </div>
   
-      <div class="col-sm-9">
 		<h1>regSNP-intron</h1>
 		<!-- <p id="message"></p> -->
 		<div id="message" class="alert"></div>
@@ -111,7 +112,6 @@
         </table>
         <div id="svgHolder"></div>
       </div>
-    </div>
   </div>
   
   <footer class="container-fluid">
@@ -126,7 +126,7 @@
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
   <script language="javascript" src="//www.biodalliance.org/release-0.13/dalliance-compiled.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>
 
   <script>
   var query_id = "<?php echo $_GET["query_id"] ?>";
@@ -237,14 +237,13 @@
         $("#message").addClass("alert-danger").html("<strong>The job may still be running or an error has occurred. Please check the <a href='submission.php?query_id=" + query_id + "'>submission page</a>.</strong>");
       }
     });
-    $("th").tooltip({
-    	show: {delay:500},
-	position: {my:"left top", collision: "none"}
+    $('[title]').qtip({
+    position : {my: "top center", at: "bottom center" },
+
     });
   });
-
-			  
   </script>
+
 
 </body>
 </html>
