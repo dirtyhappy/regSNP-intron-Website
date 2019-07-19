@@ -7,13 +7,13 @@ $(function () {
  var description = document.getElementById("InputDescription");
  var email = document.getElementById("InputEmail");
 
- var textStatus = true;
+ var textStatus = false;
 
  var fileExtensionStatus = {
-  value : true
+  value :false 
  };
 
- var fileContentStatus = true;
+ var fileContentStatus = false;
 
  var selectorStatus = true;
 
@@ -268,7 +268,7 @@ $(function () {
 ////////////////////////////////////////////////////////////////////////////////
 
   $('#example').click(function(e){
-        $('#TextArea').load("data/example/input_example.txt", function(responseTxt, statusTxt, xhr){
+        $('#TextArea').load("../input_example.txt", function(responseTxt, statusTxt, xhr){
          if(statusTxt == "error"){
            alert("Error: Could Not Load Example");
          }
