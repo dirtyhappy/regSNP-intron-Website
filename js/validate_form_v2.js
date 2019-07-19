@@ -7,13 +7,13 @@ $(function () {
  var description = document.getElementById("InputDescription");
  var email = document.getElementById("InputEmail");
 
- var textStatus = false;
+ var textStatus = true;
 
  var fileExtensionStatus = {
-  value :false 
+  value : true
  };
 
- var fileContentStatus = false;
+ var fileContentStatus = true;
 
  var selectorStatus = true;
 
@@ -77,8 +77,11 @@ $(function () {
  function checkLines(el,lines){
   for (var i = 0; i < lines.length; i++){
    var line = lines[i];
+   if (line === ""){
+    continue;
+   }
    var strings = line.trim().split(/[,\s ]+/);
-   if(strings[0] === "" || strings[0] == "chromosome" || strings[0] == "chrom" || strings[0] == "c"){
+   if(strings[0] == "chromosome" || strings[0] == "chrom" || strings[0] == "c"){
     continue;
    }
    if (strings.length != 4){
@@ -263,6 +266,19 @@ $(function () {
 
  }
 ////////////////////////////////////////////////////////////////////////////////
+
+  $('#example').click(function(e){
+        $('#TextArea').load("data/example/input_example.txt", function(responseTxt, statusTxt, xhr){
+         if(statusTxt == "error"){
+           alert("Error: Could Not Load Example");
+         }
+         validateText();
+         showErrorMessage(text);
+         if (textStatus === true){
+          removeErrorMessage(text);
+         }
+        });
+      });
 
   $('#TextArea').bind('input propertychange', function() {
    validateText();
