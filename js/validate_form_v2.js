@@ -334,7 +334,7 @@ $('#InputFile').bind('input propertychange', function() {
    else if (textStatus && fileExtensionStatus.value && fileContentStatus){
     $('#TextArea').val('');
    }
-   else if (!textStatus && !fileExtensionStatus.value && !fileContentStatus){
+   else if (!textStatus && (!fileExtensionStatus.value || !fileContentStatus)){
     e.preventDefault();
    }
    else if (!textStatus && fileExtensionStatus.value && fileContentStatus){
