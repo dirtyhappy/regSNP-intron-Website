@@ -7,13 +7,13 @@ $(function () {
  var description = document.getElementById("InputDescription");
  var email = document.getElementById("InputEmail");
 
- var textStatus = true;
+ var textStatus = false;
 
  var fileExtensionStatus = {
-  value : true
+  value :false 
  };
 
- var fileContentStatus = true;
+ var fileContentStatus = false;
 
  var selectorStatus = true;
 
