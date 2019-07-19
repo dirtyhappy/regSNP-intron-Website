@@ -1,0 +1,6 @@
+2019-07-17 13:49:00,458 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-17 13:49:00,459 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-17 13:49:00,462 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-17 13:49:00,463 - INFO - regsnp_intron.feature_calculator - Querying database
+2019-07-17 13:49:00,631 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 1359 C T is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 13:49:00,763 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135903 C C is not a valid combination. Line will not be included in results</invalid>

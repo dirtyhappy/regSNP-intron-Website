@@ -1,0 +1,4 @@
+2019-07-17 14:30:07,930 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-17 14:30:07,930 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-17 14:30:07,934 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-17 14:30:07,934 - INFO - regsnp_intron.feature_calculator - Querying database

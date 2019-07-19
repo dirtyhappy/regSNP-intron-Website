@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "src/send_email.py", line 102, in <module>
+    main()
+  File "src/send_email.py", line 95, in main
+    server = RegSNPEmail(args.server, args.port, args.account, args.password)
+  File "src/send_email.py", line 23, in __init__
+    self.server = EmailServer(host, port, email_address, password)
+  File "src/send_email.py", line 10, in __init__
+    self.server = self._start_server(host, port, email_address, password)
+  File "src/send_email.py", line 15, in _start_server
+    server.login(email_address, password)
+  File "/usr/lib/python2.7/smtplib.py", line 623, in login
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, '5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbuz\n5.7.14 VsozquzotfOSXrNzaRBZuqbJSAyeiJuCkKXb0rm7LTvpeRtlMxnIzlA5-lB8fGAl5G-uz2\n5.7.14 TiPK4R2Axb4daeJTBFIWUPOhz32U9TsRqyDaaCzviPMHEssCP56toJ2KP0GGwi> Please\n5.7.14 log in via your web browser and then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 t5sm26343938iol.55 - gsmtp')
+2019-07-19 19:47:23,302 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-19 19:47:23,302 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-19 19:47:23,306 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-19 19:47:23,306 - INFO - regsnp_intron.feature_calculator - Querying database
+2019-07-19 19:47:23,451 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 100 A T is not a valid combination. Line will not be included in results</div>
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regSNP-DB==0.2.3', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1445, in run_script
+    exec(script_code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regSNP_DB-0.2.3-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 78, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/regSNP_DB-0.2.3-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 72, in main
+    
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 73, in calculate_feature
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 175, in _queryDB
+IndexError: list index out of range

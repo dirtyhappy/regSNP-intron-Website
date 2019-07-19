@@ -1,0 +1,2 @@
+2019-07-15 13:37:28,865 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-15 13:37:28,889 - ERROR - regsnp_intron.utils.snp - Input reference allele is not consistent with reference genome: chr22 124124 G C.

@@ -1,0 +1,15 @@
+2019-07-17 14:07:36,551 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-17 14:07:36,551 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-17 14:07:36,555 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-17 14:07:36,556 - INFO - regsnp_intron.feature_calculator - Querying database
+2019-07-17 14:07:36,718 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 1359 T A is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,747 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 13587 G T is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,777 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 13598 C A is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,806 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 13599 T C is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,827 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 15898 G C is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,852 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135896 T T is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,874 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135896 T T is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,895 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135896 T T is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,916 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135897 G G is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:36,936 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135897 G G is not a valid combination. Line will not be included in results</invalid>
+2019-07-17 14:07:37,029 - INFO - regsnp_intron.feature_calculator - <invalid>Error: chr1 135903 C C is not a valid combination. Line will not be included in results</invalid>

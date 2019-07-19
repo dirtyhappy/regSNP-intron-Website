@@ -1,0 +1,40 @@
+2019-07-18 18:50:07,432 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-18 18:50:07,432 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-18 18:50:07,436 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-18 18:50:07,437 - INFO - regsnp_intron.feature_calculator - Querying database
+2019-07-18 18:50:07,704 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 876499 A G is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,726 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 883625 A G is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,749 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 889158 G C is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,770 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 889159 A C is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,793 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 977330 T C is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,816 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 982941 T C is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,838 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 987200 C T is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,860 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 1225641 C A is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,882 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 1233941 T C is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,907 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 1246004 A G is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,929 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 1289911 G A is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,951 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 1451380 T C is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,974 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 11030014 G A is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:07,996 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 11140622 C A is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,019 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 12169400 C T is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,042 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 16451824 C T is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,064 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 17349798 C T is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,085 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 17355075 A T is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,108 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 17412501 A G is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,131 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 18690998 C T is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,153 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 100316589 A G is not a valid combination. Line will not be included in results</div>
+2019-07-18 18:50:08,174 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr20 18446022 C A is not a valid combination. Line will not be included in results</div>
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regSNP-DB==0.2.2', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1445, in run_script
+    exec(script_code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regSNP_DB-0.2.2-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 79, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/regSNP_DB-0.2.2-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 73, in main
+    
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 73, in calculate_feature
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 175, in _queryDB
+IndexError: list index out of range
