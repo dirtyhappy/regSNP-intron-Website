@@ -9,7 +9,9 @@ $(function () {
 
  var textStatus = true;
 
- var fileExtensionStatus = true;
+ var fileExtensionStatus = {
+  value : true
+ };
 
  var fileContentStatus = true;
 
@@ -71,6 +73,7 @@ $(function () {
 	}
 ////////////////////////////////////////////////////////////////////////////////
 
+
  function checkLines(el,lines){
   for (var i = 0; i < lines.length; i++){
    var line = lines[i];
@@ -128,23 +131,30 @@ $(function () {
 
   function validateFileExtension (){
   if (isEmpty(file)){
-   fileExtensionStatus = true;
+   fileExtensionStatus.value = true;
   }
   else{
-   var allowedExtensions = ['txt', 'vcf', 'csv'];
+   var allowedExtensions = ['txt','csv'];
    var fileExtension = file.value.split('.').pop().toLowerCase();
+   if (fileExtension == 'vcf'){
+    fileExtensionStatus.value = true;
+    fileExtensionStatus.type = 'vcf';
+   }
+   else{
    for (var i = 0; i < allowedExtensions.length; i++){
     if(allowedExtensions[i] == fileExtension){
-     fileExtensionStatus = true;
+     fileExtensionStatus.value = true;
+     fileExtensionStatus.type = allowedExtensions[i];
      break;
     }
     else {
      setErrorMessage(file, "Invalid File Type");
-     fileExtensionStatus = false;
+     fileExtensionStatus.value = false;
 
      }
     }
    }
+  }
  }
 
  function validateFileContents(){
@@ -173,17 +183,40 @@ $(function () {
      showErrorMessage(file);
      fileContentStatus = false;
     }
-    else {
-     //console.log("this happens");
-     fileContentStatus = true;
-     removeErrorMessage(file);
+    else{
+      fileContentStatus = true;
+      removeErrorMessage(file);
+     }
 
-    }
    };
    reader.readAsText(content);
 
   }
  }
+
+ function validateVCF(){
+  if(isEmpty(file)){
+   fileContentStatus = true;
+  }
+  else{
+   var reader = new FileReader();
+   var content = file.files[0];
+   reader.onload = function(e){
+    var fileText = e.target.result;
+    if (fileText === ""){
+     setErrorMessage(file, "File is Empty");
+     showErrorMessage(file);
+     fileContentStatus = false;
+    }
+    else{
+     fileContentStatus = true;
+     removeErrorMessage(file);
+     }
+    };
+    reader.readAsText(content);
+   }
+  }
+
 
   function validateSelector (){
   if(isEmpty(file)){
@@ -191,7 +224,7 @@ $(function () {
   }
   else {
    var fileExtension = file.value.split('.').pop().toLowerCase();
-   if(selector == fileExtension){
+   if(selector.value == fileExtension){
     selectorStatus = true;
    }
    else{
@@ -267,15 +300,24 @@ $('#SelectFormat').bind('input propertychange', function() {
 
 $('#InputFile').bind('input propertychange', function() {
  validateFileExtension();
- showErrorMessage(file);
- if(fileExtensionStatus === true){
-  validateFileContents();
- }
 
+ showErrorMessage(file);
+ if(fileExtensionStatus.value === true){
+  validateSelector();
+  showErrorMessage(selector);
+  if (selectorStatus === true){
+   removeErrorMessage(selector);
+  }
+  if(fileExtensionStatus.type == 'vcf'){
+  validateVCF();
+ }else{
+   validateFileContents();
+  }
+ }
 });
 
   $('#input_form').on('submit', function(e){
-   //e.preventDefault();
+
    if (isEmpty(text) && isEmpty(file)){
     noInputStatus = false;
     setErrorMessage(text, "Please paste or upload input");
@@ -286,8 +328,20 @@ $('#InputFile').bind('input propertychange', function() {
     noInputStatus = true;
 
    }
-   if(!textStatus || !fileExtensionStatus || !fileContentStatus || !selectorStatus || !descriptionStatus || !emailStatus || !noInputStatus){
+   if(!selectorStatus || !descriptionStatus || !emailStatus || !noInputStatus){
     e.preventDefault();
+   }
+   else if (textStatus && fileExtensionStatus.value && fileContentStatus){
+    $('#TextArea').val('');
+   }
+   else if (!textStatus && !fileExtensionStatus.value && !fileContentStatus){
+    e.preventDefault();
+   }
+   else if (!textStatus && fileExtensionStatus.value && fileContentStatus){
+    $('#TextArea').val('');
+   }
+   else if (textStatus && (!fileExtensionStatus.value || !fileContentStatus)){
+    $('#InputFile').val('');
    }
   });
 });
