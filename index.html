@@ -17,26 +17,15 @@
   <link rel="icon" href="resources/images/iu_tab.jpg">
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
+
   <!-- Added Scripts -->
- 
+
   <style>
     span.error {
       color : red;
     }
   </style>
-  <script>
-  $(document).ready(function(){
-      $('#example').click(function(e){
-          $('#TextArea').load("input_example.txt", function(responseTxt, statusTxt, xhr){
-           if(statusTxt == "error"){
-             alert("Error: Could Not Load Example");
-           }
-          });
-        });
-      });
-
-
-  </script>
+  
 </head>
 
 <body>
@@ -69,17 +58,9 @@
               <li><a href="http://annovar.openbioinformatics.org/en/latest/" target="_blank">ANNOVAR</a></li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-          	<li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
-          	<li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
-          	<li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
-            </ul>
-          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/mmammel12/regSNP" target="_blank">GitHub</a></li>
+          <li><a href="https://github.com/linhai86/regsnp_intron" target="_blank">GitHub</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -87,7 +68,16 @@
 
   <div class="container-fluid">
     <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <h4>Resources</h4>
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="http://www.hgmd.cf.ac.uk/ac/index.php" target="_blank">HGMD</a></li>
+          <li><a href="http://www.1000genomes.org/" target="_blank">1000 Genomes</a></li>
+          <li><a href="http://www.ncbi.nlm.nih.gov/clinvar/" target="_blank">ClinVar</a></li>
+        </ul><br>
+      </div>
 
+      <div class="col-sm-9">
         <h1>regSNP-intron</h1>
         <p>regSNP-intron is a tool which predicts disease-causing probability of human intronic single nucleotide variants (iSNVs).</p>
         <br>
@@ -139,6 +129,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+      </div>
     </div>
   </div>
 
@@ -149,7 +140,7 @@
 	</small>
   </footer>
 </div>
-	
+
 <script src="js/validate_form_v2.js"></script>
 </body>
 </html>
