@@ -14,15 +14,14 @@ $invalid_file = "data/" . $query_id . "/output/invalid.txt";
   <title>regSNP-intron</title>
   <meta charset="utf-8">
   <?php
-  if (!file_exists($json_file)) {
-         header('Refresh:' . $sec);
-  }
-  else 	{
-        if (!file_exists($invalid_file)) {
-                header('Refresh:0, url=' . $results);
+  if (file_exists($json_file)) {
+	if (!file_exists($invalid_file)) {
+		header('Refresh:0, url=' . $results);
 	}
-	else {
-		echo "invalid";
+  }
+  else {
+  	if (!file_exists($invalid_file)) {
+		header('Refresh:' . $sec);
 	}
   }
   ?>
@@ -108,8 +107,12 @@ ini_set("auto_detect_line_endings", true);
 $log = file_get_contents("data/" . $query_id . "/log");
 echo nl2br( $log );
 if (file_exists($json_file)) {
-         echo "<br><strong><p>You job is finished: ";
-         echo "<a href='"."result.php?query_id=" . $query_id ."'>Result Page</a></p></strong>";
+	echo "<br><strong><p>You job is finished: ";
+	echo "<a href='"."result.php?query_id=" . $query_id ."'>Result Page</a></p></strong>";
+}
+if (file_exists($invalid_file)) {
+	echo "<br><strong><p>If you would like to resubmit without the error lines please return ";
+        echo "<a href='.'>Home</a></p></strong>";
 }
 ?>  
       </div>

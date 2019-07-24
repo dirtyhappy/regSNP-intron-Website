@@ -9,7 +9,8 @@ if [ ! -z "$EMAIL" ];then
     src/send_email.py start $ID $EMAIL
 fi
 
-regsnp_intron -f --iformat $FORMAT -s  /home/larsmay/Muri/regsnp/regsnp_intron/regsnp_intron/settings/settings.json $INPUT $OUTPUT
+cd ../../../home/mamammel/MURI/regSNP/regsnp_intron/
+python regsnp_intron.py -f --iformat $FORMAT $INPUT $OUTPUT
 
 if [ ! -z "$EMAIL" ] && [ -s "$OUTPUT/snp.prediction.json" ];then
     src/send_email.py end $ID $EMAIL
