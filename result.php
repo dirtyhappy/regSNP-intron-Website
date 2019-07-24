@@ -15,35 +15,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="resources/css/mystyle.css"/>
   <link rel="icon" href="resources/images/iu_tab.jpg">
-	
+
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/basic/jquery.qtip.min.css">
-  
 
-<style>
-    .qtip {
-    color: white;
-    background-color: black;
-    font-size: 12px;	
-    border-style : none;
-  }
 
-  .d{
-   background-color : #FF492D !important;
-  }
-  .pd{
-   background-color : #FF8C7A !important;
-  }
-  #resultTable tbody tr.pd.info  td {
-	color: white;
-	background-color : #FF8C7A;
-   }     
-  #resultTable tbody tr.d.info  td {
-	color: white;
-	background-color : #FF492D;
-   }     
-    
-</style>
 </head>
 
 <body>
@@ -60,7 +36,7 @@
         </button>
         <a class="navbar-brand" href="."><img style="width: 52px;" src="resources/images/iu_tab.jpg">regSNP-intron</a>
       </div>
-  
+
       <!-- Collect the nav links and other content for toggling -->
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -91,10 +67,10 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  
+
   <div class="container-fluid">
     <div class="row content">
-  
+
 		<h1>regSNP-intron</h1>
 		<!-- <p id="message"></p> -->
 		<div id="message" class="alert"></div>
@@ -120,7 +96,7 @@
         <div id="svgHolder"></div>
       </div>
   </div>
-  
+
   <footer class="container-fluid">
     <small>
     <p class="text-center">&copy; 2016 CCBB</p>
@@ -146,31 +122,31 @@
 		"ajax": data_file,
         "columns": [
 	    { "data": "#chrom"},
-	     
-            { "data": "pos"}, 
 
-            { "data": "ref"}, 
-            { "data": "alt"}, 
+            { "data": "pos"},
 
-            { "data": "disease"}, 
+            { "data": "ref"},
+            { "data": "alt"},
+
+            { "data": "disease"},
 
             { "data": "prob",
               "render": function ( data, type, row ) {
                  return parseFloat(data).toFixed(2);
               }},
-            
+
             { "data": "tpr",
               "render": function ( data, type, row ) {
                  return parseFloat(data).toFixed(2);;
               }},
-            
+
             { "data": "fpr",
               "render": function ( data, type, row ) {
                  return parseFloat(data).toFixed(2);;
               }},
-            
-            { "data": "splicing_site"}, 
-            { "data": "name"}, 
+
+            { "data": "splicing_site"},
+            { "data": "name"},
             { "data": "strand"}
     ],
     	"createdRow": function(row, data, dataIndex, cells){
@@ -182,7 +158,7 @@
 		}
 	},
     } );
-    
+
     var table = $('#resultTable').DataTable();
 
     $('#resultTable tbody').on( 'click', 'tr', function () {
@@ -225,7 +201,7 @@
                      bwgURI:               '//www.biodalliance.org/datasets/repeats.bb',
                      stylesheet_uri:       '//www.biodalliance.org/stylesheets/bb-repeats.xml'},
                     {name:                 'Conservation',
-                     desc:                 'Conservation', 
+                     desc:                 'Conservation',
                      bwgURI:               '//hgdownload.soe.ucsc.edu/goldenPath/hg19/phyloP100way/hg19.100way.phyloP100way.bw',
                      noDownsample:         true}],
 
