@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regsnp==0.2.4', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 3088, in <module>
+    @_call_aside
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 3072, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 3101, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 574, in _build_master
+    ws.require(__requires__)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 892, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 778, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'regsnp==0.2.4' distribution was not found and is required by the application

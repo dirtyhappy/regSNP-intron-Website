@@ -1,0 +1,36 @@
+2019-07-22 22:34:04,211 - INFO - feature_calculator - Checking input file format.
+2019-07-22 22:34:04,211 - INFO - feature_calculator - Sorting input file.
+2019-07-22 22:34:04,216 - INFO - feature_calculator - Switching alleles.
+2019-07-22 22:34:04,217 - INFO - feature_calculator - Querying database
+2019-07-22 22:34:04,384 - INFO - feature_calculator - <div class='invalid'>Error: chr1 876499 A G is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,408 - INFO - feature_calculator - <div class='invalid'>Error: chr1 883625 A G is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,436 - INFO - feature_calculator - <div class='invalid'>Error: chr1 889158 G C is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,469 - INFO - feature_calculator - <div class='invalid'>Error: chr1 889159 A C is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,496 - INFO - feature_calculator - <div class='invalid'>Error: chr1 977330 T C is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,524 - INFO - feature_calculator - <div class='invalid'>Error: chr1 982941 T C is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,552 - INFO - feature_calculator - <div class='invalid'>Error: chr1 987200 C T is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,581 - INFO - feature_calculator - <div class='invalid'>Error: chr1 1225641 C A is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,609 - INFO - feature_calculator - <div class='invalid'>Error: chr1 1233941 T C is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,633 - INFO - feature_calculator - <div class='invalid'>Error: chr1 1246004 A G is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,656 - INFO - feature_calculator - <div class='invalid'>Error: chr1 1289911 G A is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,678 - INFO - feature_calculator - <div class='invalid'>Error: chr1 1451380 T C is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,701 - INFO - feature_calculator - <div class='invalid'>Error: chr1 11030014 G A is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,722 - INFO - feature_calculator - <div class='invalid'>Error: chr1 11140622 C A is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,744 - INFO - feature_calculator - <div class='invalid'>Error: chr1 12169400 C T is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,766 - INFO - feature_calculator - <div class='invalid'>Error: chr1 16451824 C T is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,788 - INFO - feature_calculator - <div class='invalid'>Error: chr1 17349798 C T is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,810 - INFO - feature_calculator - <div class='invalid'>Error: chr1 17355075 A T is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,832 - INFO - feature_calculator - <div class='invalid'>Error: chr1 17412501 A G is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,854 - INFO - feature_calculator - <div class='invalid'>Error: chr1 18690998 C T is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,876 - INFO - feature_calculator - <div class='invalid'>Error: chr1 100316589 A G is not a valid combination. Line will not be included in results</div>
+2019-07-22 22:34:04,895 - INFO - feature_calculator - <div class='invalid'>Error: chr20 18446022 C A is not a valid combination. Line will not be included in results</div>
+Traceback (most recent call last):
+  File "regsnp_intron.py", line 74, in <module>
+    main()
+  File "regsnp_intron.py", line 68, in main
+    feature_calculator.calculate_feature()
+  File "/home/mamammel/MURI/regSNP/regsnp_intron/feature_calculator.py", line 76, in calculate_feature
+    self._queryDB()
+  File "/home/mamammel/MURI/regSNP/regsnp_intron/feature_calculator.py", line 176, in _queryDB
+    with open(invalidFile, "w") as invalid_f:
+UnboundLocalError: local variable 'invalidFile' referenced before assignment

@@ -1,0 +1,14 @@
+2019-07-23 01:48:30,240 - INFO - feature_calculator - Checking input file format.
+2019-07-23 01:48:30,240 - INFO - feature_calculator - Sorting input file.
+2019-07-23 01:48:30,244 - INFO - feature_calculator - Switching alleles.
+Traceback (most recent call last):
+  File "regsnp_intron.py", line 74, in <module>
+    main()
+  File "regsnp_intron.py", line 68, in main
+    feature_calculator.calculate_feature()
+  File "/home/mamammel/MURI/regSNP/regsnp_intron/feature_calculator.py", line 72, in calculate_feature
+    os.path.join(out_dir_tmp, "snp.switched"),
+  File "/home/mamammel/MURI/regSNP/regsnp_intron/utils/snp.py", line 43, in switch_alleles
+    != ref.fetch(reference=chrom, start=(pos - 1), end=pos).upper()
+  File "pysam/libcfaidx.pyx", line 303, in pysam.libcfaidx.FastaFile.fetch
+KeyError: "sequence '1' not present"

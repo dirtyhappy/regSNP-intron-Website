@@ -1,0 +1,19 @@
+2019-07-19 23:16:43,597 - INFO - regsnp_intron.feature_calculator - Checking input file format.
+2019-07-19 23:16:43,597 - INFO - regsnp_intron.feature_calculator - Sorting input file.
+2019-07-19 23:16:43,601 - INFO - regsnp_intron.feature_calculator - Switching alleles.
+2019-07-19 23:16:43,601 - INFO - regsnp_intron.feature_calculator - Querying database
+2019-07-19 23:16:43,883 - INFO - regsnp_intron.feature_calculator - <div class='invalid'>Error: chr1 100 A T is not a valid combination. Line will not be included in results</div>
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regSNP-DB==0.2.3', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1445, in run_script
+    exec(script_code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regSNP_DB-0.2.3-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 78, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/regSNP_DB-0.2.3-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 72, in main
+    
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 73, in calculate_feature
+  File "build/bdist.linux-x86_64/egg/regsnp_intron/feature_calculator.py", line 175, in _queryDB
+IndexError: list index out of range

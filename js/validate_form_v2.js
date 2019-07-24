@@ -267,17 +267,18 @@ $(function () {
  }
 ////////////////////////////////////////////////////////////////////////////////
 
-  $('#example').click(function(e){
-        $('#TextArea').load("../input_example.txt", function(responseTxt, statusTxt, xhr){
-         if(statusTxt == "error"){
-           alert("Error: Could Not Load Example");
-         }
-         validateText();
-         showErrorMessage(text);
-         if (textStatus === true){
-          removeErrorMessage(text);
-         }
-        });
+  $('#example').on('click',function(e){
+	  $.ajax({
+		  url: '../input_example.txt',
+		  success: function(data){
+			  $('#TextArea').val(data);
+			  validateText();
+			  showErrorMessage(text);
+			  if (textStatus === true){
+			 	 removeErrorMessage(text);
+			  }
+		  }
+	  });
       });
 
   $('#TextArea').bind('input propertychange', function() {

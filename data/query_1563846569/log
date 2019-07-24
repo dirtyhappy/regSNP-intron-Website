@@ -1,0 +1,5 @@
+2019-07-23 01:49:29,641 - INFO - feature_calculator - Checking input file format.
+2019-07-23 01:49:29,641 - INFO - feature_calculator - Sorting input file.
+2019-07-23 01:49:29,644 - INFO - feature_calculator - Switching alleles.
+2019-07-23 01:49:29,680 - INFO - feature_calculator - Querying database
+2019-07-23 01:49:29,844 - INFO - feature_calculator - <div class='invalid'>Error: chr1 100 A G is not a valid combination. Line will not be included in results</div>

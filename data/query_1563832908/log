@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/regsnp_intron", line 4, in <module>
+    __import__('pkg_resources').run_script('regsnp==0.2.9', 'regsnp_intron')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1438, in run_script
+    exec(code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regsnp-0.2.9-py2.7.egg/EGG-INFO/scripts/regsnp_intron", line 14, in <module>
+    from regsnp_intron.feature_calculator import FeatureCalculator
+  File "/usr/local/bin/regsnp_intron.py", line 4, in <module>
+    __import__('pkg_resources').run_script('regsnp==0.2.9', 'regsnp_intron.py')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 658, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py", line 1438, in run_script
+    exec(code, namespace, namespace)
+  File "/usr/local/lib/python2.7/dist-packages/regsnp-0.2.9-py2.7.egg/EGG-INFO/scripts/regsnp_intron.py", line 10, in <module>
+    from feature_calculator import FeatureCalculator
+ImportError: No module named feature_calculator
