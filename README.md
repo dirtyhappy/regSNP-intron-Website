@@ -39,11 +39,11 @@ __Add the following lines for javascript dependency support:__
 
 Each page is stored at root level.
 
-The resources folder is used to contain images and manual css scripts.
+The *resources* folder is used to contain images and manual css scripts.
 
-The js folder is used to store manual javascript scripts.
+The *js* folder is used to store manual javascript scripts.
 
-Index page form validation requires the validation_form_v2.js script.
+Index page form validation requires the *validation_form_v2.js* script.
 
 Add the line `<script src="js/validate_form_v2.js"></script>` after all other script tags on `index.html` for form validation.
 
