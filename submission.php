@@ -39,15 +39,6 @@ $invalid_file = "data/" . $query_id . "/output/invalid.txt";
   <link rel="icon" href="resources/images/iu_tab.jpg">
 
 
-<style>
-  .invalid {
-	color: white;
-	background-color : red;
-	display: inline-block;
-	padding-right: 10px;
-	padding-left: 10px;
-  }
-</style>
 </head>
 
 <body>

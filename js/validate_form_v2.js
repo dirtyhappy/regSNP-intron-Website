@@ -266,7 +266,23 @@ $(function () {
 
  }
 ////////////////////////////////////////////////////////////////////////////////
+  $('#InputTextClear').on('click', function(e){
+	  $('#TextArea').val('');
+	  validateText();
+	  if(textStatus === true){
+		  removeErrorMessage(text);
+	  }
+  });
+  $('#InputFileClear').on('click',function(e){
+	$('#InputFile').val('');	  
+	validateFileExtension();
+	
+	if (fileExtensionStatus.value === true){
+	removeErrorMessage(file);
+	}
+	
 
+  });
   $('#example').on('click',function(e){
 	  $.ajax({
 		  url: '../input_example.txt',

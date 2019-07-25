@@ -81,8 +81,11 @@
         <form action="submit.php" method="post" enctype="multipart/form-data" id="input_form">
           <div class="row">
             <div class="form-group col-xs-6">
+	    <div>
 			  <label for="TextArea">Or paste input here (<a href="javascript:;" id="example">use example</a>)</label>
               <textarea name="input_text" class="form-control" id="TextArea" rows="10" placeholder="chr1 100 A G"></textarea>
+	    </div>
+	      <button type='button' name="input_text_clear" class="clear_button" id="InputTextClear">Clear</button>
             </div>
           </div>
           <div class="form-group">
@@ -90,6 +93,7 @@
             <label for="InputFile">Or upload a file</label>
             <input type="file" name="input_file" class="form-control-file" id="InputFile" aria-describedby="fileHelp">
 	  </div>
+	    <button type='button' name="input_file_clear" class="clear_button" id="InputFileClear">Clear</button>
             <small id="fileHelp" class="form-text text-muted">size limit: 10K rows</small>
           </div>
           <div class="row">

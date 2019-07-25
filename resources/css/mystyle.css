@@ -21,6 +21,19 @@ span.error {
   color : red;
 }
 
+.clear_button{
+	margin-top: 10px;
+	font-size: 11px;
+}
+/* submission page styling */
+  .invalid {
+	color: white;
+	background-color : red;
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+  }
+
 /* result page styling */
 .qtip {
 color: white;
